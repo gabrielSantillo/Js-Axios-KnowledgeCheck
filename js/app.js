@@ -1,13 +1,13 @@
 function success(response) {
-  
+  for (let i = 0; i < response[`data`][`meals`].length; i++) {
     document.body.insertAdjacentHTML(
       `afterbegin`,
       `
-    <h4>${response[`data`][`meals`][0][`strMeal`]}</h4>
-    <img src="${response[`data`][`meals`][0][`strMealThumb`]}">
+    <h4>${response[`data`][`meals`][i][`strMeal`]}</h4>
+    <img src="${response[`data`][`meals`][i][`strMealThumb`]}">
 `
     );
-  
+  }
 }
 
 function failure(error) {
