@@ -3,8 +3,7 @@ function success(response) {
     `afterbegin`,
     `
     <h4>${response[`data`][`meals`][0][`strMeal`]}</h4>
-    <h3>${response[`data`][`meals`][0][`strArea`]}</h3>
-    <p>${response[`data`][`meals`][0][`strInstructions`]}</p>
+    <img src="${response[`data`][`meals`][0][`strMealThumb`]}">
 `
   );
 }
@@ -19,6 +18,9 @@ function failure(error) {
 axios
   .request({
     url: `https://www.themealdb.com/api/json/v1/1/random.php`,
+    params: {
+        c: `Chicken`
+    }
   })
   .then(success)
   .catch(failure);
