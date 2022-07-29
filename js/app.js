@@ -60,9 +60,9 @@ function postUserMessage(details) {
       url: `https://jsonplaceholder.typicode.com/posts`,
       method: `POST`,
       data: {
-        title: `${user_title_value}`,
-        body: `${user_body_value}`,
-        userId: `${user_id_value}`,
+        title: user_title_value,
+        body: user_body_value,
+        userId: user_id_value,
       },
     })
     .then(post_success)
