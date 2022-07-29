@@ -1,11 +1,13 @@
 function success(response) {
-  document.body.insertAdjacentHTML(
-    `afterbegin`,
-    `
+  
+    document.body.insertAdjacentHTML(
+      `afterbegin`,
+      `
     <h4>${response[`data`][`meals`][0][`strMeal`]}</h4>
     <img src="${response[`data`][`meals`][0][`strMealThumb`]}">
 `
-  );
+    );
+  
 }
 
 function failure(error) {
@@ -17,10 +19,10 @@ function failure(error) {
 
 axios
   .request({
-    url: `https://www.themealdb.com/api/json/v1/1/random.php`,
+    url: `https://www.themealdb.com/api/json/v1/1/filter.php`,
     params: {
-        c: `Chicken`
-    }
+      c: `Chicken`,
+    },
   })
   .then(success)
   .catch(failure);
