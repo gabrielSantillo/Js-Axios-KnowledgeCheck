@@ -3,14 +3,17 @@ function success(response) {
     `afterbegin`,
     `
     <h4>${response[`data`][`meals`][0][`strMeal`]}</h4>
-<h3>${response[`data`][`meals`][0][`strArea`]}</h3>
-<p>${response[`data`][`meals`][0][`strInstructions`]}</p>
+    <h3>${response[`data`][`meals`][0][`strArea`]}</h3>
+    <p>${response[`data`][`meals`][0][`strInstructions`]}</p>
 `
   );
 }
 
 function failure(error) {
-    document.body.insertAdjacentElement(`afterbegin`, `<h1>Refresh and try again</h1>`)
+  document.body.insertAdjacentElement(
+    `afterbegin`,
+    `<h1>Refresh and try again</h1>`
+  );
 }
 
 axios
